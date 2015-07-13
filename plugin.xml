@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-googlefit"
+        version="0.1.0">
+
+  <name>GoogleFit</name>
+
+  <description>Use your GoogleFit to gather activity information.</description>
+
+  <author>Carmelo Velardo</author>
+
+  <license>MIT</license>
+
+  <keywords>Google, GoogleFit, Google Fit</keywords>
+
+  <!--repo>https://github.com/2dvisio/cordova-plugin-googlefit.git</repo>
+  <issue>https://github.com/2dvisio/cordova-plugin-googlefit/issues</issue-->
+
+  <engines>
+    <engine name="cordova" version=">=3.3.0"/>
+  </engines>
+
+  <js-module src="www/GoogleFit.js" name="GoogleFit">
+    <clobbers target="window.plugins.googlefit" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+
+    <framework src="com.google.android.gms:play-services:7.5.0+" />
+    <!-- <framework src="com.google.android.gms:play-services-identity:+" /> -->
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="GoogleFit">
+        <param name="android-package" value="uk.ac.ox.ibme.cordova.plugins.GoogleFit" />
+        <!-- <param name="onload" value="true" /> -->
+      </feature>
+      <access origin="https://accounts.google.com/*" />
+    </config-file>
+
+    <source-file src="src/android/GoogleFit.java" target-dir="src/uk/ac/ox/ibme/cordova/plugins/"/>
+  </platform>
+
+</plugin>
