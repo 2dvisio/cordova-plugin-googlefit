@@ -62,48 +62,29 @@ window.plugins.googlefit.getStuff2(
 Valid DataTypes
 -------
 
-At the moment the datatypes that are readable from the GoogleFit API are:
+At the moment the datatypes that are readable from the GoogleFit API are listed below.
 
-DataType.TYPE_STEP_COUNT_DELTA
-DataType.AGGREGATE_STEP_COUNT_DELTA
-DataType.TYPE_CALORIES_EXPENDED
-DataType.AGGREGATE_CALORIES_EXPENDED
-DataType.TYPE_DISTANCE_DELTA
-DataType.AGGREGATE_DISTANCE_DELTA
-DataType.TYPE_HEIGHT
-DataType.TYPE_ACTIVITY_SAMPLE
-DataType.TYPE_ACTIVITY_SEGMENT
-DataType.AGGREGATE_ACTIVITY_SUMMARY
-DataType.TYPE_WEIGHT
-DataType.TYPE_HEART_RATE_BPM
-DataType.TYPE_POWER_SAMPLE
-DataType.AGGREGATE_POWER_SUMMARY
-DataType.TYPE_CYCLING_PEDALING_CADENCE
-DataType.TYPE_CYCLING_WHEEL_REVOLUTION
-DataType.TYPE_LOCATION_SAMPLE
+Use them by placing the corresponding GoogleFit URL notation in the arrays passed to the GetStuff1 and GetStuff2 JavaScript calls.
 
-use them by placing the corresponding GoogleFit URL notation in the arrays passed to the GetStuff1 and GetStuff2 JavaScript calls.
-
-The corresponding values are (as per: https://developers.google.com/fit/rest/v1/data-types):
-
-com.google.step_count.delta
-com.google.step_count.delta
-com.google.calories.expended
-com.google.calories.expended
-com.google.distance.delta
-com.google.distance.delta
-com.google.height
-com.google.activity.sample
-com.google.activity.segment
-com.google.activity.summary
-com.google.weight
-com.google.heart_rate.bpm
-com.google.power.sample
-com.google.power.summary
-com.google.cycling.pedaling.cadence
-com.google.cycling.wheel_revolution.rpm
-com.google.location.sample
-
+| DataType                                | URL format                               |
+| --------------------------------------- | ---------------------------------------- |
+| DataType.TYPE_STEP_COUNT_DELTA          | com.google.step_count.delta              |
+| DataType.AGGREGATE_STEP_COUNT_DELTA     | com.google.step_count.delta              |
+| DataType.TYPE_CALORIES_EXPENDED         | com.google.calories.expended             |
+| DataType.AGGREGATE_CALORIES_EXPENDED    | com.google.calories.expended             |
+| DataType.TYPE_DISTANCE_DELTA            | com.google.distance.delta                |
+| DataType.AGGREGATE_DISTANCE_DELTA       | com.google.distance.delta                |
+| DataType.TYPE_HEIGHT                    | com.google.height                        |
+| DataType.TYPE_ACTIVITY_SAMPLE           | com.google.activity.sample               |
+| DataType.TYPE_ACTIVITY_SEGMENT          | com.google.activity.segment              |
+| DataType.AGGREGATE_ACTIVITY_SUMMARY     | com.google.activity.summary              |
+| DataType.TYPE_WEIGHT                    | com.google.weight                        |
+| DataType.TYPE_HEART_RATE_BPM            | com.google.heart_rate.bpm                |
+| DataType.TYPE_POWER_SAMPLE              | com.google.power.sample                  |
+| DataType.AGGREGATE_POWER_SUMMARY        | com.google.power.summary                 |
+| DataType.TYPE_CYCLING_PEDALING_CADENCE  | com.google.cycling.pedaling.cadence      |
+| DataType.TYPE_CYCLING_WHEEL_REVOLUTION  | com.google.cycling.wheel_revolution.rpm  |
+| DataType.TYPE_LOCATION_SAMPLE           | com.google.location.sample               |
 
 Online resources for GoogleFit
 ------
