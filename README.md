@@ -30,6 +30,7 @@ Using the plugin
 
 To use the plugin you need to call the specific functions
 
+```
 window.plugins.googlefit.getStuff1(
                   1435708800000,    // Start time in milliseconds
                   1436368288000,    // Start time in milliseconds
@@ -41,7 +42,6 @@ window.plugins.googlefit.getStuff1(
                   function(e) {
                     // The error e is returned in case of problems with the query
                   });
-
 
 window.plugins.googlefit.getStuff2(
                   1435708800000,    // Start time in milliseconds
@@ -58,6 +58,7 @@ window.plugins.googlefit.getStuff2(
                   function(e) {
                     // The error e is returned in case of problems with the query
                   });
+```
 
 Valid DataTypes
 -------
