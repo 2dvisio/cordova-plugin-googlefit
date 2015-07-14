@@ -1,0 +1,26 @@
+{
+    "version": "0.3.0",
+    "name": "org.velardo.cordova-plugin-googlefit",
+    "cordova_name": "GoogleFit",
+    "description": "Use your GoogleFit to gather activity information.",
+    "license": "MIT",
+    "keywords": [
+        "Google",
+        "GoogleFit",
+        "Google Fit"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/2dvisio/cordova-plugin-googlefit"
+    },
+    "author": "Carmelo Velardo",
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.3.0"
+        }
+    ]
+}
