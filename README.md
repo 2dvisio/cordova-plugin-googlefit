@@ -1,19 +1,12 @@
-INTRO
-======
-
+#INTRO
 This project contains a Cordova plugin for the GoogleFit platform.
 
-
-Caveats
--------
-
+## Caveats
 At this stage (version 0.1.0) the plugin is still in a quite early stage of development and is provided "AS IS".
 It works only to read certain data from the GoogleFit API and is not yet ready to store any data.
 
 
-Content
-------
-
+##Content
 Here the breakdown of the content
 
 - plugin.xml  (The Manifest file for the plugin)
@@ -25,8 +18,13 @@ Here the breakdown of the content
 
 
 
-Using the plugin
-------
+## Using the plugin
+
+You can install the plugin by using the cordova npm repository.
+
+```
+cordova plugin add org.velardo.cordova-plugin-googlefit
+```
 
 To use the plugin you need to call the specific functions
 
