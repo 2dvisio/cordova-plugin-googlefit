@@ -61,7 +61,7 @@ window.plugins.googlefit.getStuff2(
 ```
 
 Valid DataTypes
--------
+------
 
 At the moment the datatypes that are readable from the GoogleFit API are listed below.
 
@@ -87,12 +87,62 @@ Use them by placing the corresponding GoogleFit URL notation in the arrays passe
 | DataType.TYPE_CYCLING_WHEEL_REVOLUTION  | com.google.cycling.wheel_revolution.rpm  |
 | DataType.TYPE_LOCATION_SAMPLE           | com.google.location.sample               |
 
+
+
+# Test the GoogleFit Cordova plugin
+
+## SDK requirements for compiling the plugin
+In order for the plugin to compile you need to install the
+```
+Android Support Repository
+Android Support Library
+Google Play services
+Google Repository
+Google Play APK Expansion Library
+```
+ ![Image of Android SDK configuration](_imgs/Android_SDK.png)
+
+
+## How to enable the Google Fitness API for your application
+
+In order for your app to communicate properly with the Google Fitness API, you need to provide the SHA1 sum of the certificate used for signing your application to Google. This will enable the GoogleFit plugin to communicate with the Fit application in each smartphone where the application is installed.
+
+To do this:
+ * Create a project in the [Google code console](https://code.google.com/apis/console/?pli=1)
+ * Search and enable the "Fitness API"
+ * Then Credentials → Create new client ID → Installed application
+ * If this is the first time you configure the project you should now "Configure the consent screen" where you can add details about your app and then save it for future uses
+ * Now go to "installed application" and select Android
+ * You need to specify the package name (As in the "config.xml" of the Cordova project, under the id property of <widget>)
+
+ * For the SHA1 signature, go to the folder where you have stored your keystore file and invoke the
+  keytool -v -list -alias <PUT_ALIAS_HERE> -keystore <NAME_OF_KEYSTORE_FILE> -storepass <PASSWORD> -keypass <PASSWORD>
+    * In case of the default debug key the folder is "".android" in your home directory (both Windows and Linux/Mac users) and Execute:
+    ```
+    keytool -v -list -alias androiddebugkey -keystore debug.keystore -storepass android -keypass android
+    ```
+    * If you want to generate your own keystore:
+    ```
+    keytool -genkey -v -keystore APPNAME.keystore -alias APPNAME -keyalg RSA -keysize 2048 -validity 10000
+    ```
+
+ * You can now see the SHA1 signature of the debug keystore like
+
+  ![Image of SHA1 Signature](_imgs/sha1.png)
+
+ * Now go back to the API console website, copy the SHA1 signature, press on "create client ID"
+
+ * Now the first time the user accesses the GoogleFit plugin (by calling one of the getStuff* functions), the user will be asked to pair a user account to the google fit. At this stage of development, the first call will be lost, it won't produce any data so be careful!
+
+ * In order to use it in Cordova, put the keystore file in ./platforms/android/ and then add a file named ant.properties in the same folder with these two lines:
+    * key.store=APPNAME.keystore
+    * key.alias=APPNAME
+
+
 Online resources for GoogleFit
 ------
 
-Data Types
-https://developers.google.com/fit/android/data-types
+[Data Types](https://developers.google.com/fit/android/data-types)
 
 
-Activity Types
-https://developers.google.com/fit/rest/v1/reference/activity-types
+[Activity Types](https://developers.google.com/fit/rest/v1/reference/activity-types)
