@@ -2,7 +2,7 @@
 This project contains a Cordova plugin for the GoogleFit platform.
 Any pull request considered ;)
 
-## NB. If you are intersted in something that could 'talk' to both Android and iOS please check [this work](https://github.com/dariosalvi78/cordova-plugin-health) done by a colleague of mine.
+If you seek a plugin that can 'talk' to both Android and iOS please check [this work](https://github.com/dariosalvi78/cordova-plugin-health) done by a colleague of mine.
 It also operates with HealthKit, which makes it less GoogleFit oriented... but more Cordova style!
 
 
