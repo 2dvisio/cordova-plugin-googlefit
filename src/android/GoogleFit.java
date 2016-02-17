@@ -159,6 +159,9 @@ public class GoogleFit extends CordovaPlugin {
         mClient = new GoogleApiClient.Builder(appContext)
             .addApi(Fitness.HISTORY_API)
             .addScope(new Scope(Scopes.FITNESS_ACTIVITY_READ_WRITE))
+            .addScope(new Scope(Scopes.FITNESS_BODY_READ_WRITE))
+            .addScope(new Scope(Scopes.FITNESS_LOCATION_READ_WRITE))
+            .addScope(new Scope(Scopes.FITNESS_NUTRITION_READ_WRITE))
             .addConnectionCallbacks(
                 new GoogleApiClient.ConnectionCallbacks() {
                     @Override
