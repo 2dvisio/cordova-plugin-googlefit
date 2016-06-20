@@ -47,6 +47,8 @@ import java.util.concurrent.TimeUnit;
  * a user with Google Play Services and how to properly represent data in a {@link DataSet}.
  */
 public class GoogleFit extends CordovaPlugin {
+    
+    public static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1340;
     public static final String TAG = "cv-pl-googlefit";
     public static final int REQUEST_OAUTH = 1;
     private static final String DATE_FORMAT = "yyyy.MM.dd HH:mm:ss";
@@ -278,6 +280,12 @@ public class GoogleFit extends CordovaPlugin {
     @Override
     public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
+        if (ContextCompat.checkSelfPermission(actContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+        ActivityCompat.requestPermissions(actContext,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+        }
         // Select the getStuff2: get Buckets+Datasets+Datapoints from GoogleFit according to the query parameters
         if ("getStuff2".equals(action)) {
             long st = args.getJSONObject(0).getLong("startTime");
