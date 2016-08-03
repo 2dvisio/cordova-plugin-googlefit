@@ -281,8 +281,8 @@ public class GoogleFit extends CordovaPlugin {
     @Override
     public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
-        // Select the getStuff2: get Buckets+Datasets+Datapoints from GoogleFit according to the query parameters
-        if ("getStuff2".equals(action)) {
+        // Select the getAggregateData: get Buckets+Datasets+Datapoints from GoogleFit according to the query parameters
+        if ("getAggregateData".equals(action)) {
             long st = args.getJSONObject(0).getLong("startTime");
             long et = args.getJSONObject(0).getLong("endTime");
             List<DataType> dt = JSON2DataType(args.getJSONObject(0).getJSONArray("datatypes"));
@@ -294,8 +294,8 @@ public class GoogleFit extends CordovaPlugin {
             cordova.getThreadPool().execute(new GetStuff(queryDataWithBuckets(st, et, dt, dta, du, tu, tb), callbackContext));
         }
 
-        // Select the getStuff1: get Datasets+Datapoints from GoogleFit according to the query parameters
-        if ("getStuff1".equals(action)) {
+        // Select the getData: get Datasets+Datapoints from GoogleFit according to the query parameters
+        if ("getData".equals(action)) {
 
             long st = args.getJSONObject(0).getLong("startTime");
             long et = args.getJSONObject(0).getLong("endTime");
