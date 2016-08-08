@@ -20,6 +20,7 @@ import com.google.android.gms.fitness.Fitness;
 import com.google.android.gms.fitness.data.Bucket;
 import com.google.android.gms.fitness.data.DataPoint;
 import com.google.android.gms.fitness.data.DataSet;
+import com.google.android.gms.fitness.data.DataSource;
 import com.google.android.gms.fitness.data.DataType;
 import com.google.android.gms.fitness.data.Field;
 import com.google.android.gms.fitness.request.DataReadRequest;
@@ -291,8 +292,8 @@ public class GoogleFit extends CordovaPlugin {
     }
 
     public void getAllStuffs() throws JSONException{
-        // Select the getStuff2: get Buckets+Datasets+Datapoints from GoogleFit according to the query parameters
-        if ("getStuff2".equals(this.savedAction)) {
+        // Select the getAggregateData: get Buckets+Datasets+Datapoints from GoogleFit according to the query parameters
+        if ("getAggregateData".equals(this.savedAction)) {
             long st = this.savedArgs.getJSONObject(0).getLong("startTime");
             long et = this.savedArgs.getJSONObject(0).getLong("endTime");
             List<DataType> dt = JSON2DataType(this.savedArgs.getJSONObject(0).getJSONArray("datatypes"));
@@ -305,8 +306,8 @@ public class GoogleFit extends CordovaPlugin {
         }
     
     
-        // Select the getStuff1: get Datasets+Datapoints from GoogleFit according to the query parameters
-        if ("getStuff1".equals(this.savedAction)) {
+        // Select the getData: get Datasets+Datapoints from GoogleFit according to the query parameters
+        if ("getData".equals(this.savedAction)) {
             long st = this.savedArgs.getJSONObject(0).getLong("startTime");
             long et = this.savedArgs.getJSONObject(0).getLong("endTime");
             JSONArray _dt = this.savedArgs.getJSONObject(0).getJSONArray("datatypes");
@@ -452,7 +453,9 @@ public class GoogleFit extends CordovaPlugin {
 
             try {
                 dataPoint_JSON.put("type", dp.getDataType().getName());
-                dataPoint_JSON.put("source", dp.getDataSource());
+                DataSource dataSource = dp.getOriginalDataSource();
+                String appPkgName = dataSource.getAppPackageName();
+                dataPoint_JSON.put("source", appPkgName);
                 dataPoint_JSON.put("start", dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
                 dataPoint_JSON.put("end", dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
 

@@ -1,11 +1,11 @@
 function GoogleFit() {
 }
 
-GoogleFit.prototype.getStuff1 = function (startTime, endTime, datatypes, successCallback, failureCallback) {
+GoogleFit.prototype.getData = function (startTime, endTime, datatypes, successCallback, failureCallback) {
   cordova.exec(successCallback,
                failureCallback,
                "GoogleFit",
-               "getStuff1",
+               "getData",
                [{
                  "startTime" : startTime,
                  "endTime" : endTime,
@@ -14,11 +14,11 @@ GoogleFit.prototype.getStuff1 = function (startTime, endTime, datatypes, success
 };
 
 
-GoogleFit.prototype.getStuff2 = function (startTime, endTime, datatypes, dataaggregations, durationBucket, timeUnitBucket, typeBucket, successCallback, failureCallback) {
+GoogleFit.prototype.getAggregateData = function (startTime, endTime, datatypes, dataaggregations, durationBucket, timeUnitBucket, typeBucket, successCallback, failureCallback) {
   cordova.exec(successCallback,
                failureCallback,
                "GoogleFit",
-               "getStuff2",
+               "getAggregateData",
                [{
                  "startTime" : startTime,
                  "endTime" : endTime,

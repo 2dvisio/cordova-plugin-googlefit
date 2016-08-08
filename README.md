@@ -31,12 +31,13 @@ You can install the plugin by using the cordova npm repository.
 cordova plugin add org.velardo.cordova-plugin-googlefit
 ```
 
-To use the plugin you need to call the specific functions
-
+To use the plugin you need to call the specific functions.
 ```
-window.plugins.googlefit.getStuff1(
-                  1435708800000,    // Start time in milliseconds
-                  1436368288000,    // Start time in milliseconds
+var startTime = new Date().getTime() - 3 * 24 * 60 * 60 * 1000; // three days ago
+var endTime = new Date().getTime(); // now
+window.plugins.googlefit.getData(
+                  startTime,        // Start time in milliseconds
+                  endTime,          // End time in milliseconds
                   datatypes,        // Datatypes under the URL format specified by GoogleFit
                   function(data) {
                     // Success callback. The data object is a JSON that follows
@@ -46,11 +47,11 @@ window.plugins.googlefit.getStuff1(
                     // The error e is returned in case of problems with the query
                   });
 
-window.plugins.googlefit.getStuff2(
-                  1435708800000,    // Start time in milliseconds
-                  1436368288000,    // Start time in milliseconds
+window.plugins.googlefit.getAggregateData(
+                  startTime,        // Start time in milliseconds
+                  endTime,          // End time in milliseconds
                   datatypes,        // Datatypes under the URL format specified by GoogleFit
-                  datatypes,        // Datatypes under the URL format specified by GoogleFit
+                  dataaggregations, // Aggregate datatypes under the URL format specified by GoogleFit
                   1,                // Duration value of the databucket
                   "DAYS",           // TimeUnit that quantify the duration unit (DAYS, HOURS, MINUTES, SECONDS)
                   0,                // Type of the Buckets (0: ByTime, 1: ByActivityType, 2: ByActivitySegment)
@@ -68,7 +69,7 @@ Valid DataTypes
 
 At the moment the datatypes that are readable from the GoogleFit API are listed below.
 
-Use them by placing the corresponding GoogleFit URL notation in the arrays passed to the GetStuff1 and GetStuff2 JavaScript calls.
+Use them by placing the corresponding GoogleFit URL notation in the arrays passed to the getData and getAggregateData JavaScript calls.
 
 | DataType                                | URL format                               |
 | --------------------------------------- | ---------------------------------------- |
