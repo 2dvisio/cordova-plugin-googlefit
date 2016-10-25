@@ -48,7 +48,7 @@ import java.util.concurrent.TimeUnit;
  * a user with Google Play Services and how to properly represent data in a {@link DataSet}.
  */
 public class GoogleFit extends CordovaPlugin {
-    
+
     public static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1340;
     public static final String TAG = "cv-pl-googlefit";
     public static final int REQUEST_OAUTH = 1;
@@ -100,10 +100,15 @@ public class GoogleFit extends CordovaPlugin {
     DataType.TYPE_DISTANCE_DELTA,
     DataType.TYPE_HEIGHT,
     DataType.TYPE_ACTIVITY_SAMPLE,
+    DataType.TYPE_ACTIVITY_SAMPLES,
     DataType.TYPE_ACTIVITY_SEGMENT,
     DataType.AGGREGATE_ACTIVITY_SUMMARY,
     DataType.TYPE_WEIGHT,
+    DataType.AGGREGATE_WEIGHT_SUMMARY,
+    DataType.TYPE_BODY_FAT_PERCENTAGE,
+    DataType.AGGREGATE_BODY_FAT_PERCENTAGE_SUMMARY,
     DataType.TYPE_HEART_RATE_BPM,
+    DataType.AGGREGATE_HEART_RATE_SUMMARY,
     DataType.TYPE_POWER_SAMPLE,
     DataType.AGGREGATE_POWER_SUMMARY,
     DataType.TYPE_CYCLING_PEDALING_CADENCE,
@@ -280,13 +285,13 @@ public class GoogleFit extends CordovaPlugin {
      * @return
      * @throws JSONException
      */
-    
+
     @Override
     public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
         this.savedArgs = args;
         this.savedAction = action;
         this.savedCallbackContext = callbackContext;
-    
+
         checkLocationPermission();
         return true;  // Returning false will result in a "MethodNotFound" error.
     }
@@ -301,18 +306,18 @@ public class GoogleFit extends CordovaPlugin {
             int du = this.savedArgs.getJSONObject(0).getInt("durationBucket");
             TimeUnit tu = JSON2TimeUnit(this.savedArgs.getJSONObject(0).getString("timeUnitBucket"));
             int tb = this.savedArgs.getJSONObject(0).getInt("typeBucket");
-    
+
             cordova.getThreadPool().execute(new GetStuff(queryDataWithBuckets(st, et, dt, dta, du, tu, tb), this.savedCallbackContext));
         }
-    
-    
+
+
         // Select the getData: get Datasets+Datapoints from GoogleFit according to the query parameters
         if ("getData".equals(this.savedAction)) {
             long st = this.savedArgs.getJSONObject(0).getLong("startTime");
             long et = this.savedArgs.getJSONObject(0).getLong("endTime");
             JSONArray _dt = this.savedArgs.getJSONObject(0).getJSONArray("datatypes");
             List<DataType> dt = JSON2DataType(_dt);
-    
+
             cordova.getThreadPool().execute( new GetStuff(queryData(st, et, dt), this.savedCallbackContext));
         }
     }
