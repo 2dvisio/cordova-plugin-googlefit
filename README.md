@@ -71,30 +71,41 @@ At the moment the datatypes that are readable from the GoogleFit API are listed 
 
 Use them by placing the corresponding GoogleFit URL notation in the arrays passed to the getData and getAggregateData JavaScript calls.
 
-| DataType                                       | URL format                               |
-| ---------------------------------------------- | ---------------------------------------- |
-| DataType.TYPE_STEP_COUNT_DELTA                 | com.google.step_count.delta              |
-| DataType.AGGREGATE_STEP_COUNT_DELTA            | com.google.step_count.delta              |
-| DataType.TYPE_CALORIES_EXPENDED                | com.google.calories.expended             |
-| DataType.AGGREGATE_CALORIES_EXPENDED           | com.google.calories.expended             |
-| DataType.TYPE_DISTANCE_DELTA                   | com.google.distance.delta                |
-| DataType.AGGREGATE_DISTANCE_DELTA              | com.google.distance.delta                |
-| DataType.TYPE_HEIGHT                           | com.google.height                        |
-| DataType.TYPE_ACTIVITY_SAMPLE                  | com.google.activity.sample (deprecated)  |
-| DataType.TYPE_ACTIVITY_SAMPLES                 | com.google.activity.samples              |
-| DataType.TYPE_ACTIVITY_SEGMENT                 | com.google.activity.segment              |
-| DataType.AGGREGATE_ACTIVITY_SUMMARY            | com.google.activity.summary              |
-| DataType.TYPE_WEIGHT                           | com.google.weight                        |
-| DataType.AGGREGATE_WEIGHT_SUMMARY              | com.google.weight.summary                |
-| DataType.TYPE_BODY_FAT_PERCENTAGE              | com.google.body.fat.percentage           |
-| DataType.AGGREGATE_BODY_FAT_PERCENTAGE_SUMMARY | com.google.body.fat_percentage.summary   |
-| DataType.TYPE_HEART_RATE_BPM                   | com.google.heart_rate.bpm                |
-| DataType.AGGREGATE_HEART_RATE_SUMMARY          | com.google.heart_rate.summary            |
-| DataType.TYPE_POWER_SAMPLE                     | com.google.power.sample                  |
-| DataType.AGGREGATE_POWER_SUMMARY               | com.google.power.summary                 |
-| DataType.TYPE_CYCLING_PEDALING_CADENCE         | com.google.cycling.pedaling.cadence      |
-| DataType.TYPE_CYCLING_WHEEL_REVOLUTION         | com.google.cycling.wheel_revolution.rpm  |
-| DataType.TYPE_LOCATION_SAMPLE                  | com.google.location.sample               |
+| DataType                                       | URL format                                     |
+| ---------------------------------------------- | ---------------------------------------------- |
+| DataType.TYPE_STEP_COUNT_CADENCE               | com.google.step_count.cadence                  |
+| DataType.TYPE_STEP_COUNT_DELTA                 | com.google.step_count.delta                    |
+| DataType.AGGREGATE_STEP_COUNT_DELTA            | com.google.step_count.delta                    |
+| DataType.TYPE_CALORIES_EXPENDED                | com.google.calories.expended                   |
+| DataType.AGGREGATE_CALORIES_EXPENDED           | com.google.calories.expended                   |
+| DataType.TYPE_CALORIES_CONSUMED                | (deprecated) com.google.calories.consumed      |
+| DataType.AGGREGATE_CALORIES_CONSUMED           | (deprecated) com.google.calories.consumed      |
+| DataType.TYPE_NUTRITION                        | com.google.nutrition                           |
+| DataType.AGGREGATE_NUTRITION_SUMMARY           | com.google.nutrition.summary                   |
+| DataType.TYPE_DISTANCE_DELTA                   | com.google.distance.delta                      |
+| DataType.AGGREGATE_DISTANCE_DELTA              | com.google.distance.delta                      |
+| DataType.TYPE_HEIGHT                           | com.google.height                              |
+| DataType.TYPE_SPEED                            | com.google.speed                               |
+| DataType.AGGREGATE_SPEED_SUMMARY               | com.google.speed.summary                       |
+| DataType.TYPE_ACTIVITY_SAMPLE                  | com.google.activity.sample                     |
+| DataType.TYPE_ACTIVITY_SEGMENT                 | com.google.activity.segment                    |
+| DataType.AGGREGATE_ACTIVITY_SUMMARY            | com.google.activity.summary                    |
+| DataType.TYPE_WORKOUT_EXERCISE                 | com.google.activity.exercise                   |
+| DataType.TYPE_WEIGHT                           | com.google.weight                              |
+| DataType.AGGREGATE_WEIGHT_SUMMARY              | com.google.weight.summary                      |
+| DataType.TYPE_BODY_FAT_PERCENTAGE              | com.google.body.fat.percentage                 |
+| DataType.AGGREGATE_BODY_FAT_PERCENTAGE_SUMMARY | com.google.body.fat_percentage.summary         |
+| DataType.TYPE_HEART_RATE_BPM                   | com.google.heart_rate.bpm                      |
+| DataType.AGGREGATE_HEART_RATE_SUMMARY          | com.google.heart_rate.summary                  |
+| DataType.TYPE_POWER_SAMPLE                     | com.google.power.sample                        |
+| DataType.AGGREGATE_POWER_SUMMARY               | com.google.power.summary                       |
+| DataType.TYPE_CYCLING_PEDALING_CADENCE         | com.google.cycling.pedaling.cadence            |
+| DataType.TYPE_CYCLING_PEDALING_CUMULATIVE      | com.google.cycling.pedaling.cumulative         |
+| DataType.TYPE_CYCLING_WHEEL_REVOLUTION         | com.google.cycling.wheel_revolution.cumulative |
+| DataType.TYPE_CYCLING_WHEEL_RPM                | com.google.cycling.wheel_revolution.rpm        |
+| DataType.TYPE_LOCATION_SAMPLE                  | com.google.location.sample                     |
+| DataType.AGGREGATE_LOCATION_BOUNDING_BOX       | com.google.location.bounding_box               |
+
 
 
 
