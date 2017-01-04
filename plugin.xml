@@ -25,7 +25,7 @@
   <!-- android -->
   <platform name="android">
 
-    <framework src="com.google.android.gms:play-services:7.5.0+" />
+    <framework src="com.google.android.gms:play-services-fitness:9.8+" />
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="GoogleFit">
