@@ -1,5 +1,5 @@
 {
-    "version": "1.1.0",
+    "version": "1.2.0",
     "name": "org.velardo.cordova-plugin-googlefit",
     "cordova_name": "GoogleFit",
     "description": "Use your GoogleFit to gather activity information.",
