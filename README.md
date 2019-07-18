@@ -6,7 +6,7 @@ If you seek a plugin that can 'talk' to both Android and iOS please check [this 
 It also operates with HealthKit, which makes it less GoogleFit oriented... but more Cordova style!
 
 
-## Caveats
+## Caveats
 The plugin is still in development and is provided "AS IS".
 It works only to read certain data from the GoogleFit API and is not yet ready to store any data.
 
@@ -23,7 +23,7 @@ Here the breakdown of the content
 
 
 
-## Using the plugin
+## Using the plugin
 
 You can install the plugin by using the cordova npm repository.
 
