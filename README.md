@@ -1,4 +1,4 @@
-#INTRO
+# INTRO
 This project contains a Cordova plugin for the GoogleFit platform.
 Any pull request considered ;)
 
@@ -11,7 +11,7 @@ The plugin is still in development and is provided "AS IS".
 It works only to read certain data from the GoogleFit API and is not yet ready to store any data.
 
 
-##Content
+## Content
 Here the breakdown of the content
 
 - plugin.xml  (The Manifest file for the plugin)
